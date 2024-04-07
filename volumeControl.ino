@@ -14,7 +14,6 @@ unsigned long lastButtonPress = 0;
 unsigned long lastRun = 0;
 
 void setup() {
-
   pinMode(CLK, INPUT);
   pinMode(DT, INPUT);
   pinMode(SW, INPUT_PULLUP);
@@ -68,12 +67,12 @@ void closeTab() {
 
 void volumeControl() {
   if (millis() - lastRun > 5) {
-    if (digitalRead(DT) == 1) {           //Encoder CCW Rotation
-      Consumer.write(MEDIA_VOLUME_DOWN);  //Volume Up
+    if (digitalRead(DT) == 1) {         
+      Consumer.write(MEDIA_VOLUME_DOWN); 
       delay(2);
 
-    } else {                            // Encoder CW Rotation
-      Consumer.write(MEDIA_VOLUME_UP);  //Volume Down
+    } else {                         
+      Consumer.write(MEDIA_VOLUME_UP); 
       delay(2);
     }
   }
